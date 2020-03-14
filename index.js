@@ -60,7 +60,23 @@ app.post('/incoming', (req, res) => {
         res.writeHead(200, {'Content-Type': 'text/xml'});
         res.end(twiml.toString());
 
-      } else if (req.body.Body == "World") {
+      } else if (req.body.Body == "Hi" || req.body.Body == "Hi!") {
+
+        message = 'Hi there! Message any country name to find out the latest stats for that country. Additionally, you can message me "World" to get the most recent worldwide stats. Stay safe!'
+
+        twiml.message(message);
+        res.writeHead(200, {'Content-Type': 'text/xml'});
+        res.end(twiml.toString());
+
+      }else if (req.body.Body == "South Korea") {
+
+        message = 'Hi! Try using Korea, South :)'
+
+        twiml.message(message);
+        res.writeHead(200, {'Content-Type': 'text/xml'});
+        res.end(twiml.toString());
+
+      }else if (req.body.Body == "World") {
         let totaldeaths = 0;
         let totalcases = 0;
         let recoveredcases = 0;
