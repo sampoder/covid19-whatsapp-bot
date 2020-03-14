@@ -1,0 +1,12 @@
+body {
+  padding: 30px; 
+}
+
+#title {
+  margin-top: 20px;
+}
+
+#exampleImage {
+  display: block;
+  width: 100%;
+}
