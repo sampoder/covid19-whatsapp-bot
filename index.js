@@ -36,6 +36,7 @@ app.post('/incoming', (req, res) => {
   req2.end(function (res2) {
     if (res2.error) throw new Error(res2.error);
       if (res2.body.message == "OK"){
+        //console.log("res2.body stringified: ", JSON.stringify(res2.body, null, 4));
         let totaldeaths = 0;
         let totalcases = 0;
         let recoveredcases = 0;
@@ -101,7 +102,15 @@ app.post('/incoming', (req, res) => {
         res.writeHead(200, {'Content-Type': 'text/xml'});
         res.end(twiml.toString());
 
-      }
+      } 
+      else if (req.body.Body ==     req.body.Body.toLowerCase()){
+        console.log("this name is lowercase");
+        let message = "Try using an uppercase letter at the begining of the country's name. if that doesn't work, it is likely your country was not found.";
+        twiml.message(message);
+        res.writeHead(200, {'Content-Type': 'text/xml'});
+        res.end(twiml.toString());
+
+        }
     else {
       let message = "We've hit an error here! It is likely your country was not found.";
       twiml.message(message);
