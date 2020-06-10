@@ -4,7 +4,7 @@ A Whatsapp Bot that can provide you with the most recent stats regarding the COV
 
 ## Usage
 
-Visit this [page](bit.ly/2IJrVB6) to get started.
+Visit this [page](https://bit.ly/2IJrVB6) to get started.
 
 Message any country name to find out the latest stats for that country. Additionally, you can message me "World" to get the most recent worldwide stats.
 
